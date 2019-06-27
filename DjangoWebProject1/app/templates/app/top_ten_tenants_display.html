@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+<style>
+#tenannts {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tenannts td, #tenannts th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tenannts tr:nth-child(even){background-color: #808080;}
+
+#tenannts tr:hover {background-color: #808080;}
+
+#tenannts th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+{% extends "app/layout.html" %}
+
+{% block content %}
+<br/>
+<br/>
+<br/>
+
+<h2>Occurence of various Tenants</h2>
+<body>
+    <table id="tenannts">
+        <thead>
+            <tr>
+                <th>Tenant Name</th>
+                <th>Frequency</th>
+            </tr>
+        </thead>
+        <tbody>
+               {% for i in ten_tents %}
+                <tr>
+                   <td>{{i.0}}</td>
+                   <td>{{i.1}}</td>
+                </tr>
+             {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+{% endblock %}
+
+</html>
